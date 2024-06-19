@@ -1,0 +1,27 @@
+<header class="main-title">
+    <h1>catalogE</h1>
+    <h2>the online classbook</h2>
+    <div id="main-menu">
+        <nav>
+            <ul>
+                <li><a href="/">CLASSBOOK</a></li>
+                <% if (user && user.role === 'teacher') { %>
+                    <li><a href="/invite">INVITE</a></li>
+                    <li><a href="/listusers">USERS</a></li>
+                <% } else if (user.role === 'student') { %>
+                    <li><a href="/invitations">INVITATIONS</a></li>
+                    <li><a href="/assignments">ASSIGNMENTS</a></li>
+                    <li><a href="/grades">GRADES</a></li>
+                    <% } %>
+                <% if (user) { %> 
+                    <li id="user-info">
+                        <span><%= user.name %></span>
+                        <a href="/logout">Logout</a>
+                    </li>
+                <% } else { %>
+                    <li><a id="login-from-header" href="/login">Login</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>

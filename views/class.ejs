@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs', { title: classData.name }) %>
+    <body id="class">
+        <%- include('partials/header.ejs', { user: user || {} }) %>
+        
+        <%- include('partials/sidenav.ejs', { classData: classData }) %>
+    
+        <div id="classdescription">
+            <h1><%= classData.name %></h1>
+            <p><%= classData.description %></p>
+        </div>
+  </body>
+</html>
